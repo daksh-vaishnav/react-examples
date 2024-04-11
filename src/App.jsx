@@ -4,21 +4,21 @@ import AddTodo from "./dredux/components/addTodo";
 import Todos from "./dredux/components/todos";
 
 function App() {
-    //! redux example state Start
+    //! redux toolkit example state Start
     const [isEditTodo,setEditTodo] = useState(false)
     const [editTodoDetail,setEditTodoDetail] = useState(false)
-    //? redux example state end
+    //? redux toolkit example state end
 
 
 
 	return (
-        //! redux example start
+        //! redux toolkit example start
 		// <>
         // {/* {`${isEditTodo} from app` } */}
 		// 	<AddTodo isEditTodo={isEditTodo} setEditTodo={setEditTodo} editTodoDetail={editTodoDetail}/>
 		// 	<Todos setEditTodo={setEditTodo} setEditTodoDetail={setEditTodoDetail}/>
 		// </>
-        //? redux example end
+        //? redux toolkit example end
 
 
 
