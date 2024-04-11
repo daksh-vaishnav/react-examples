@@ -15,14 +15,13 @@ const onClickHandler = () => {
 export default function CompositionDemo() {
 	return (
 		<ProductCard product={product}>
-			<ProductCard.img image={product.image} />
-			<ProductCard.info info={product.info} />
-			<ProductCard.desc description={product.description} />
-			<ProductCard.rating rating={product.rating} />
-			<ProductCard.price price={product.price} />
+			<ProductCard.img />
+			<ProductCard.info />
+			<ProductCard.desc />
+			<ProductCard.rating />
+			<ProductCard.price />
 			<ProductCard.action
-				onClickHandler={onClickHandler}
-			>
+				onClickHandler={onClickHandler} >
 				Add To Cart
 			</ProductCard.action>
 		</ProductCard>

@@ -6,22 +6,21 @@ import ProductDescription from "./productDescription";
 import ProductPrice from "./productPrice";
 import ProductInfo from "./productInfo";
 import ProductAddToCart from "./productAddToCart";
+import { ProductCardContextProvider } from "./productContext";
 
-
-export default function ProductCard({product, children}) {
+export default function ProductCard({ product, children }) {
 	return (
-		<div className="product-container">
-			<div className="product-card">
-				{children}
+		<ProductCardContextProvider value={product}>
+			<div className="product-container">
+				<div className="product-card">{children}</div>
 			</div>
-		</div>
+		</ProductCardContextProvider>
 	);
 }
 
-
-ProductCard.img = ProductImage
-ProductCard.info = ProductInfo
-ProductCard.desc = ProductDescription
-ProductCard.rating = ProductRating
-ProductCard.price = ProductPrice
-ProductCard.action = ProductAddToCart
+ProductCard.img = ProductImage;
+ProductCard.info = ProductInfo;
+ProductCard.desc = ProductDescription;
+ProductCard.rating = ProductRating;
+ProductCard.price = ProductPrice;
+ProductCard.action = ProductAddToCart;
