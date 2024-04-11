@@ -1,9 +1,4 @@
 import ProductCard from "./productCard/productCard";
-import ProductDescription from "./productCard/productDescription";
-import ProductImage from "./productCard/productImage";
-import ProductInfo from "./productCard/productInfo";
-import ProductPrice from "./productCard/productPrice";
-import ProductRating from "./productCard/productRating";
 
 const product = {
 	image: "https://picsum.photos/id/250/200/300",
@@ -13,17 +8,23 @@ const product = {
 	price: 50000,
 };
 
+const onClickHandler = () => {
+    console.log("hello world");
+}
+
 export default function CompositionDemo() {
 	return (
-		<>
-			<ProductCard>
-				<ProductImage image={product.image} />
-				<ProductInfo info={product.info} />
-				<ProductDescription description={product.description} />
-				<ProductRating rating={product.rating} />
-				<ProductPrice price={product.price} />
-				<button className="product-add-to-cart">Add to cart</button>
-			</ProductCard>
-		</>
+		<ProductCard product={product}>
+			<ProductCard.img image={product.image} />
+			<ProductCard.info info={product.info} />
+			<ProductCard.desc description={product.description} />
+			<ProductCard.rating rating={product.rating} />
+			<ProductCard.price price={product.price} />
+			<ProductCard.action
+				onClickHandler={onClickHandler}
+			>
+				Add To Cart
+			</ProductCard.action>
+		</ProductCard>
 	);
 }
